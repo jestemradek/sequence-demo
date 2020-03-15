@@ -1,0 +1,16 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Input</th>
+      <th scope="col">Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in rows %}
+    <tr>
+        <td>{{ row.input|e }}</td>
+        <td>{{ row.output|e }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

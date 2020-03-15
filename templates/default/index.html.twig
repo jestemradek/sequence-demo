@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sequence demo{% endblock %}
+
+{% form_theme sequence_form 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+
+<div class="container">
+    <h1>Welcome to Sequence demo!</h1>
+
+    {{ form_start(sequence_form, {'attr': {'id': 'sequence_form'}}) }}
+    {{ form_widget(sequence_form) }}
+
+    <button id="submitBtn" class="btn btn-primary" type="submit">Submit</button> <button id="clearBtn" class="btn btn-primary" type="button">Clear</button>
+
+    {{ form_end(sequence_form) }}
+</div>
+<div id="outputTbl" class="container">
+</div>
+
+{% endblock %}
