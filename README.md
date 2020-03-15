@@ -49,5 +49,6 @@ $ symfony console app:sequence 33 44 55 1000 99999
 or this command if you don't have the Symfony binary installed:
 ```bash
 $ php bin/console app:sequence 33 44 55 1000 99999
+```
 
 [1]: https://symfony.com/doc/current/reference/requirements.html
