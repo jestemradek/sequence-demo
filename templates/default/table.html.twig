@@ -8,8 +8,9 @@
   <tbody>
     {% for row in rows %}
     <tr>
-        <td>{{ row.input|e }}</td>
-        <td>{{ row.output|e }}</td>
+        {% for number in row %}
+          <td>{{ number|e }}</td>
+        {% endfor %}
     </tr>
     {% endfor %}
   </tbody>

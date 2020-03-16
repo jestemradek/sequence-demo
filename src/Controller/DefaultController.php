@@ -34,19 +34,11 @@ class DefaultController extends AbstractController
 
         if ($request->isXMLHttpRequest() && $request->get('sequence_numbers'))
         {
-            $data = explode(PHP_EOL, $request->get('sequence_numbers'));
-            $output = [];
-            foreach ($data as $value)
-            {
-                if($value != "")
-                {
-                    $value = (int)$value;
-                    $output[] = ["input" => $value, "output" => $sequence->getHighestValue($value)];
-                }
-            }
+            $numbers = explode(PHP_EOL, $request->get('sequence_numbers'));
+            $rows = $sequence->getHighestValueArray($numbers);
 
             return $this->render('default/table.html.twig', [
-                'rows' => $output,
+                'rows' => $rows,
             ]);
         }
         

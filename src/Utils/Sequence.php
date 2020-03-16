@@ -53,4 +53,22 @@ class Sequence
         }
         return $result;
     }
+
+    public function getHighestValueArray(array $numbers) : array
+    {
+        $array=[];
+        foreach($numbers as $n)
+        {
+            $result=0;
+            for ($i = 0 ; $i <= $n ; $i++)
+            {
+                if ($this->sequence($i) > $result)
+                {
+                    $result = $this->sequence($i);
+                }
+            }
+            $array[]=[$n, $result];
+        }
+        return $array;
+    }
 }

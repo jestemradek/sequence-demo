@@ -23,13 +23,7 @@ class SequenceCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $sequence = new Sequence();
-        $rows = [];
-
-        foreach ($input->getArgument('numbers') as $value)
-        {
-                $value = (int)$value;
-                $rows[] = [$value, $sequence->getHighestValue($value)];
-        }
+        $rows = $sequence->getHighestValueArray($input->getArgument('numbers'));
 
         $table = new Table($output);
         $table 
