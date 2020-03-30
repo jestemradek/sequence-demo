@@ -12,10 +12,10 @@ class SequenceType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add("numbers", TextareaType::class, [
-                "label" => "Please enter the numbers, each on a separate line:",
-                "label_attr" => ["class" => "form-control"],
-                "attr" => ["rows" => "10"]
+            ->add('numbers', TextareaType::class, [
+                'label' => 'Please enter the numbers, each on a separate line:',
+                'label_attr' => ['class' => 'form-control'],
+                'attr' => ['rows' => '10'],
             ]);
     }
 
